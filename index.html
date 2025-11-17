@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenChainz | Join the Charter 175 - Verified Sustainable Building Materials</title>
+    <meta name="description" content="Join the Charter 175: The founding members building the future of sustainable sourcing. 100 Architects. 50 Suppliers. 25 Data Providers. Lifetime benefits.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1A1A1A;
+            background: #FFFFFF;
+        }
+        .header {
+            background: #2CB191;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        .nav-cta {
+            background: white;
+            color: #2CB191;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        
+        /* Hero Banner */
+        .hero-banner {
+            background: linear-gradient(135deg, #2CB191 0%, #1B7F63 100%);
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+        }
+        .hero-banner h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .hero-banner .tagline {
+            font-size: 24px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        .spots-counter {
+            background: rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+        .spots-counter p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .counter-grid {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+        }
+        .counter-item {
+            text-align: center;
+        }
+        .counter-item .count {
+            font-size: 48px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .counter-item .label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .cta-primary {
+            background: white;
+            color: #2CB191;
+            padding: 18px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        
+        /* Mission Section */
+        .mission-section {
+            background: #F5F5F5;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .mission-section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #1A1A1A;
+        }
+        .mission-text {
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            color: #4A4A4A;
+        }
+        .mission-text strong {
+            color: #2CB191;
+            font-weight: 600;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        /* Benefits Section */
+        .benefits-section {
+            background: white;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .benefit-card {
+            padding: 30px;
+            border: 2px solid #E0E0E0;
+            border-radius: 8px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .benefit-card:hover {
+            border-color: #2CB191;
+            box-shadow: 0 4px 12px rgba(44, 177, 145, 0.15);
+        }
+        .benefit-card h3 {
+            color: #2CB191;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        .benefit-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .benefit-card li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        .benefit-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2CB191;
+            font-weight: bold;
+        }
+        
+        /* Requirements Section */
+        .requirements-section {
+            background: #F9F9F9;
+        }
+        .requirements-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+        }
+        .requirements-table {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th {
+            background: #2CB191;
+            color: white;
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 16px;
+            border-bottom: 1px solid #E0E0E0;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:hover {
+            background: #F5F5F5;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            background: white;
+        }
+        .how-it-works h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 32px;
+        }
+        .feature {
+            margin-bottom: 40px;
+        }
+        .feature h3 {
+            color: #2CB191;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        .feature p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #4A4A4A;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1A1A1A;
+            color: white;
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: #2CB191;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        .footer-links a:hover {
+            opacity: 0.7;
+        }
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            font-size: 14px;
+            color: #999;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-banner h1 { font-size: 32px; }
+            .hero-banner .tagline { font-size: 18px; }
+            .counter-grid { flex-direction: column; gap: 20px; }
+            .nav-links { display: none; }
+            .mission-section h2 { font-size: 28px; }
+            table { font-size: 14px; }
+            th, td { padding: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <nav class="nav">
+            <a href="/" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: white; font-weight: bold;">
+                <svg width="40" height="40" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-labelledby="gcLogoTitle" role="img">
+                    <title id="gcLogoTitle">GreenChainz Leaf and Chain Logo</title>
+                    <!-- Leaf (two halves for subtle depth) -->
+                    <path d="M50 10 C30 10, 20 30, 20 50 C20 70, 30 90, 50 90 L50 50 Z" fill="#2CB191"/>
+                    <path d="M50 10 C70 10, 80 30, 80 50 C80 70, 70 90, 50 90 L50 50 Z" fill="#1B7F63"/>
+                    <!-- Chain links -->
+                    <circle cx="35" cy="65" r="8" fill="none" stroke="white" stroke-width="3"/>
+                    <circle cx="65" cy="65" r="8" fill="none" stroke="white" stroke-width="3"/>
+                    <line x1="43" y1="65" x2="57" y2="65" stroke="white" stroke-width="3"/>
+                </svg>
+                <span style="font-size: 28px; font-weight: bold;">GreenChainz</span>
+            </a>
+            <div class="nav-links">
+                <a href="#mission">Mission</a>
+                <a href="#benefits">Benefits</a>
+                <a href="#requirements">Requirements</a>
+                <a href="#join">Join</a>
+                <!-- LINK TO YOUR VERCEL APP (Add when deployed) -->
+                <!-- <a href="https://app.greenchainz.com" class="nav-cta">Launch Platform</a> -->
+                <a href="mailto:founder@greenchainz.com">Contact</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Hero Banner -->
+    <div class="hero-banner">
+        <h1>Join the Charter 175: The Founding Members Building the Future of Sustainable Sourcing</h1>
+        <p class="tagline">
+            100 Architects. 50 Suppliers. 25 Data Providers.<br>
+            Lifetime Benefits. Once We Hit 175, This Offer Closes Forever.
+        </p>
+        
+        <div class="spots-counter">
+            <p>Founding Member Spots Remaining:</p>
+            <div class="counter-grid">
+                <div class="counter-item">
+                    <span class="count" id="architect-count">89</span>
+                    <span class="label">Architects</span>
+                </div>
+                <div class="counter-item">
+                    <span class="count" id="supplier-count">47</span>
+                    <span class="label">Suppliers</span>
+                </div>
+                <div class="counter-item">
+                    <span class="count" id="provider-count">23</span>
+                    <span class="label">Data Providers</span>
+                </div>
+            </div>
+        </div>
+        
+        <a href="mailto:founder@greenchainz.com?subject=Charter%20175%20Application&body=Hi%20Jerit,%0A%0AI'd%20like%20to%20apply%20for%20the%20Charter%20175%20program.%0A%0AName:%0ACompany:%0ARole:%20(Architect/Supplier/Data%20Provider)%0AEmail:%0APhone:%0A%0ATell%20us%20why%20you're%20building%20sustainably:" class="cta-primary">Secure Your Founding Membership</a>
+        
+        <!-- FUTURE: Add link to app when deployed -->
+        <!-- <a href="https://app.greenchainz.com/signup" class="cta-primary" style="margin-left: 20px;">Try Beta Platform</a> -->
+    </div>
+
+    <!-- Mission Section -->
+    <div class="mission-section" id="mission">
+        <div class="container">
+            <h2>Our Mission: Make Sustainable Materials the Default, Not the Exception</h2>
+            <div class="mission-text">
+                <p>The construction industry is responsible for <strong>39% of global carbon emissions</strong>. We can't solve climate change alone — but together, we can make a dent.</p>
+                <br>
+                <p><strong>GreenChainz exists to make verified sustainability data as accessible as product pricing.</strong> No more hunting through PDFs. No more fragmented research. No more greenwashing.</p>
+                <br>
+                <p>Every architect, contractor, and manufacturer on this platform is part of the solution. <strong>You're not just sourcing materials — you're voting for a livable planet with every RFQ you send.</strong></p>
+                <br>
+                <p>This is bigger than any one company. <strong>This is our home. This beautiful blue and green planet. And the only way out of this mess is if we all work together.</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="benefits-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 50px; font-size: 32px;">Charter 175 Lifetime Benefits</h2>
+            <div class="benefits-grid">
+                <!-- Architects -->
+                <div class="benefit-card">
+                    <h3>🏛️ For Architects</h3>
+                    <ul>
+                        <li><strong>FREE forever</strong> platform access</li>
+                        <li>Founding Member badge on profile</li>
+                        <li>24hr priority support (vs 48hr)</li>
+                        <li>Charter 175 exclusive network access</li>
+                        <li>Quarterly roadmap feedback sessions</li>
+                        <li>Group buying power for LEED/FSC/B-Corp</li>
+                        <li>Price Match Guarantee</li>
+                        <li>Refer a supplier → $100 credit</li>
+                    </ul>
+                </div>
+                
+                <!-- Suppliers -->
+                <div class="benefit-card">
+                    <h3>🏭 For Suppliers</h3>
+                    <ul>
+                        <li><strong>FREE for 6 months</strong>, then 50% off forever</li>
+                        <li>Founding Member badge on all listings</li>
+                        <li>24hr priority support</li>
+                        <li>Featured in launch press release</li>
+                        <li>Supplier spotlight video (we produce)</li>
+                        <li>Charter 175 exclusive network</li>
+                        <li>Price Match Guarantee</li>
+                        <li>Refer an architect → $100 credit</li>
+                    </ul>
+                </div>
+                
+                <!-- Data Providers -->
+                <div class="benefit-card">
+                    <h3>📊 For Data Providers</h3>
+                    <ul>
+                        <li><strong>FREE API integration</strong> + co-marketing</li>
+                        <li>Featured on "Powered by" page</li>
+                        <li>Dedicated account manager</li>
+                        <li>Co-branded content (case studies, webinars)</li>
+                        <li>Charter 175 network access</li>
+                        <li>Price Match Guarantee</li>
+                        <li>Refer a partner → $500 credit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Requirements Section -->
+    <div class="requirements-section">
+        <div class="container">
+            <h2 id="requirements">Charter 175 Membership Requirements</h2>
+            <p style="text-align: center; margin-bottom: 30px; font-size: 16px; color: #666;">
+                We're building a community of independent innovators. To protect this mission, Charter 175 is reserved for small-to-mid-sized companies committed to sustainability.
+            </p>
+            <div class="requirements-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Criteria</th>
+                            <th>Requirement</th>
+                            <th>Why</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Company Size</strong></td>
+                            <td>Under 500 employees</td>
+                            <td>SMB focus only</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Revenue Cap</strong></td>
+                            <td>Under $50M annual</td>
+                            <td>Regional players only — excludes BigCorp</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sustainability Proof</strong></td>
+                            <td>1+ verified certification OR in-progress application</td>
+                            <td>No greenwashers</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Platform Exclusivity</strong></td>
+                            <td>Cannot be featured on competitors during Charter Year 1</td>
+                            <td>Loyalty lock-in</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Founder Story</strong></td>
+                            <td>Must submit 2-min video: "Why we build sustainably"</td>
+                            <td>Builds community trust</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works -->
+    <div class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            
+            <div class="feature">
+                <h3>🔍 For Architects & Contractors</h3>
+                <p>Search and filter sustainable materials by EPDs, certifications (LEED, FSC, Cradle to Cradle), embodied carbon, and recycled content. Compare products side-by-side and send RFQs directly to suppliers.</p>
+            </div>
+
+            <div class="feature">
+                <h3>🏭 For Suppliers</h3>
+                <p>Showcase your sustainable products to qualified buyers. Upload EPDs, certifications, and product specs. Receive RFQs from architects actively sourcing materials.</p>
+            </div>
+
+            <div class="feature">
+                <h3>✅ Verified Sustainability Data</h3>
+                <p>Every product's sustainability claims are <strong>founder-verified</strong>. We integrate with EPD International, Building Transparency (EC3), and leading certification bodies.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="mission-section" id="join" style="padding: 60px 20px;">
+        <div class="container">
+            <h2 style="font-size: 36px; margin-bottom: 20px;">Ready to Join the Movement?</h2>
+            <p style="font-size: 18px; margin-bottom: 30px; color: #4A4A4A;">
+                Once we hit 175 members, this offer closes forever. No exceptions.<br>
+                <strong>Secure your spot today. Be part of history.</strong>
+            </p>
+            <a href="mailto:founder@greenchainz.com?subject=Charter%20175%20Application&body=Hi%20Jerit,%0A%0AI'd%20like%20to%20apply%20for%20the%20Charter%20175%20program.%0A%0AName:%0ACompany:%0ARole:%20(Architect/Supplier/Data%20Provider)%0AEmail:%0APhone:%0A%0ATell%20us%20why%20you're%20building%20sustainably:" class="cta-primary">Apply for Charter 175 Membership</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-content">
+            <p style="font-size: 20px; margin-bottom: 10px;"><strong>Launching Q1 2026</strong></p>
+            <p style="margin-bottom: 20px;">
+                <a href="mailto:founder@greenchainz.com" style="color: #2CB191;">founder@greenchainz.com</a> | 434-359-2460
+            </p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/company/greenchainz" target="_blank">LinkedIn</a>
+                <!-- FUTURE: Add link when app is deployed -->
+                <!-- <a href="https://app.greenchainz.com/login">Sign In to Platform</a> -->
+                <a href="mailto:founder@greenchainz.com?subject=Partnership%20Inquiry">Partner With Us</a>
+                <a href="mailto:founder@greenchainz.com?subject=Press%20Inquiry">Press</a>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 GreenChainz. All rights reserved.</p>
+                <p style="margin-top: 20px; font-size: 13px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    <strong>The Charter 175 Guarantee:</strong> You will never pay more than a new customer. If we run a promotional offer, you automatically receive that offer or better.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Counter Animation Script -->
+    <script>
+        // Update these numbers manually as people join
+        let architectsLeft = 89;
+        let suppliersLeft = 47;
+        let providersLeft = 23;
+
+        // Display counters
+        document.getElementById('architect-count').textContent = architectsLeft;
+        document.getElementById('supplier-count').textContent = suppliersLeft;
+        document.getElementById('provider-count').textContent = providersLeft;
+
+        // Pulse animation every 5 seconds
+        setInterval(() => {
+            document.querySelectorAll('[id$="-count"]').forEach(el => {
+                el.style.transition = 'transform 0.2s';
+                el.style.transform = 'scale(1.15)';
+                setTimeout(() => el.style.transform = 'scale(1)', 200);
+            });
+        }, 5000);
+    </script>
+</body>
+</html>
